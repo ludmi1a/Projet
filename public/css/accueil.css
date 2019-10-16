@@ -9,24 +9,31 @@
     top: 50%;
     left: 0;
     width: 100%;
-    background: green;
+    background: blue;
     height: 2px;
     z-index: -1;
     
 }
 .title span{
-    background: red;
+    background: blue;
     padding: 4px 8px;
-    width: 25%;
+}
+.image{
+	background-image:url(/users/Etu5/3971165/Projet/public/images/background.jpg);
+	background-color:white;
+	background-attachment:fixed;
+	background-position:right bottom;
+	
+
 }
 .block{
   height: 100px;
   width: 200px;
   display: inline-block;
   margin: 30px 50px 0px 50px;
-  background-color: blue;
+  background-color: lightcyan;
   text-align: center;
-  border: solid 5px green;
+  border: solid 5px pink;
   padding: 10px;
  }
 .right{
@@ -38,5 +45,5 @@
 }
  
 
-accueil.css
+
 
