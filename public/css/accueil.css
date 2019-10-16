@@ -3,30 +3,16 @@
     text-align: center;
      width: 100%;
 }
-.title::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    background: blue;
-    height: 2px;
-    z-index: -1;
-    
-}
+
+
+
 .image{
-	background-image : url(/users/Etu5/3971165/Projet/public/images/background.jpg);
+	background-image : url(background3.jpg);
+
 	background-repeat : no-repeat;
+	background-size: cover;
 }
 	
-.title span{
-    background: blue;
-    padding: 4px 8px;
-}
-.image{
-    background: grey;
-    padding: 4px 8px;
-}
 
 .deuxblock{
 	text-align : center;
@@ -37,12 +23,13 @@
   height: 200px;
   width: 400px;
   display: inline-block;
-  margin: 30px 50px 50px 50px;
-  background-color: white;
+  margin: 50px 100px 0px 100px;
+  background-color: rosybrown;
   text-align: center;
   padding: 1em;
   border-radius : 20%;
-  padding-top : 100px;
+  padding-top : 130px;
+  font-family: 'Raleway', sans-serif;
  }
 .right{
   box-sizing:content-box;
@@ -50,9 +37,15 @@
 .left{
   box-sizing:content-box;
 }
-#grandit:hover {
-  width: 450px;
-  height: 250px;
+a.block:hover {
+  background-color: lightSalmon;
+  height : 220;
+  width : 420;
+}
+
+a{
+  color : white;
+  text-decoration : none;
 }
 
 
