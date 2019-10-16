@@ -4,17 +4,14 @@
      width: 100%;
 }
 
-.title span{
-    background: grey;
-    padding: 4px 8px;
-}
+
+
 .image{
 	background-image : url(background3.jpg);
 	background-repeat : no-repeat;
 	background-size: cover;
 }
 	
-
 
 .deuxblock{
 	text-align : center;
@@ -50,5 +47,5 @@ a{
   text-decoration : none;
 }
 
-accueil.css
+
 
