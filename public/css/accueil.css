@@ -1,0 +1,53 @@
+
+Aller au contenu
+Utiliser Gmail avec un lecteur d'écran
+Activez les notifications de bureau pour Gmail.   OK  Non, merci
+Conversations
+1,25 Go (8 %) utilisés sur 15 Go
+Gérer
+Conditions d'utilisation · Confidentialité · Règlement du programme
+Dernière activité sur le compte : il y a 9 heures
+Détails
+
+.title{
+    position: relative;
+    text-align: center;
+     width: 100%;
+}
+.title::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    background: green;
+    height: 2px;
+    z-index: -1;
+    
+}
+.title span{
+    background: red;
+    padding: 4px 8px;
+    width: 25%;
+}
+.block{
+  height: 100px;
+  width: 200px;
+  display: inline-block;
+  margin: 30px 50px 0px 50px;
+  background-color: blue;
+  text-align: center;
+  border: solid 5px green;
+  padding: 10px;
+ }
+.right{
+
+  box-sizing:content-box;
+}
+.left{
+  box-sizing:content-box;
+}
+ 
+
+accueil.css
+
