@@ -1,5 +1,5 @@
 .title{
-    position: relative;
+   position: relative;
     text-align: center;
      width: 100%;
 }
@@ -14,29 +14,42 @@
     z-index: -1;
     
 }
-.title span{
-    background: red;
-    padding: 4px 8px;
-    width: 25%;
+.image{
+	background-image : url(background.jpg);
+	background-repeat : no-repeat;
 }
+	
+.title span{
+    background: grey;
+    padding: 4px 8px;
+}
+
+.deuxblock{
+	text-align : center;
+	margin-top : 200px;
+}
+
 .block{
-  height: 100px;
-  width: 200px;
+  height: 200px;
+  width: 400px;
   display: inline-block;
-  margin: 30px 50px 0px 50px;
-  background-color: blue;
+  margin: 30px 50px 50px 50px;
+  background-color: white;
   text-align: center;
-  border: solid 5px green;
-  padding: 10px;
+  padding: 1em;
+  border-radius : 20%;
+  padding-top : 100px;
  }
 .right{
-
   box-sizing:content-box;
 }
 .left{
   box-sizing:content-box;
 }
- 
+#grandit:hover {
+  width: 450px;
+  height: 250px;
+}
 
 accueil.css
 
