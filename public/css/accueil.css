@@ -1,7 +1,7 @@
 .title{
-   position: relative;
-    text-align: center;
-     width: 100%;
+	position: relative;
+	text-align: left;
+	font-family: 'Raleway', sans-serif
 }
 
 
@@ -21,9 +21,10 @@
 .block{
   height: 200px;
   width: 400px;
+  border: solid 3px white;
   display: inline-block;
-  margin: 50px 100px 0px 100px;
-  background-color: rosybrown;
+  margin: 50px 120px 0px 120px;
+  background-color: IndianRed;
   text-align: center;
   padding: 1em;
   border-radius : 20%;
@@ -37,15 +38,22 @@
   box-sizing:content-box;
 }
 a.block:hover {
-  background-color: lightSalmon;
-  height : 220;
-  width : 420;
+  background-color: white;
+  color: IndianRed;
+  border: solid 3px IndianRed;
 }
 
 a{
   color : white;
   text-decoration : none;
 }
-
+h2{
+	color: IndianRed;
+	font-weight: normal;
+	margin-left:40px;
+}
+img{
+	float: left;
+}
 
 
