@@ -1,20 +1,15 @@
-.title{
-   position: relative;
-    text-align: center;
-     width: 100%;
+
+.text {
+text-align : center;
+font-family:  Courier, monospace;
+
 }
-.title::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    background: blue;
-    height: 2px;
-    z-index: -1;
-    
+img.image:hover{
+  height : 220;
+  width : 270;
+
 }
-.title span{
-    background: blue;
-    padding: 4px 8px;
+#annonce{
+
+
 }
