@@ -1,0 +1,10 @@
+body{
+    background-image : url("background3.jpg");
+
+    background-repeat : no-repeat;
+    background-size: cover;
+}
+.h2{
+    color: #2E4053;
+    text-align: center;
+}

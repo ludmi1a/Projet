@@ -1,0 +1,63 @@
+.title{
+	position: relative;
+	text-align: left;
+	font-family: 'Raleway', sans-serif
+}
+
+
+
+body{
+	background-image : url("background3.jpg");
+
+	background-repeat : no-repeat;
+	background-size: cover;
+}
+	
+
+.deuxblock{
+	text-align : center;
+	margin-top : 200px;
+	display: inline-block;
+}
+
+.block{
+  height: 200px;
+  width: 400px;
+  border: solid 3px white;
+  
+  margin: 20px 70px 70px 110px;
+  background-color: IndianRed;
+  text-align: center;
+  padding: 1em;
+  border-radius : 20%;
+  padding-top : 130px;
+  font-family: 'Raleway', sans-serif;
+ }
+.right{
+  box-sizing:content-box;
+  float: right;
+}
+.left{
+  box-sizing:content-box;
+  float: left;
+}
+a.block:hover {
+  background-color: white;
+  color: IndianRed;
+  border: solid 3px IndianRed;
+  transition-duration: 1s;
+  font-size: 26px;
+}
+
+a{
+  color : white;
+  text-decoration : none;
+}
+h2{
+	color: IndianRed;
+	font-weight: normal;
+	margin-left:40px;
+}
+img{
+	float: left;
+}
