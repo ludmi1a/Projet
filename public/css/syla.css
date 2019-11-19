@@ -1,0 +1,22 @@
+.title{
+	
+	position: relative;
+	text-align: left;
+	font-family: 'Raleway', sans-serif;
+}
+.logo{
+	float: left;
+}
+
+
+a{
+  color : white;
+  text-decoration : none;
+}
+
+h2{
+	color: IndianRed;
+	font-weight: normal;
+	margin-left:40px;
+}
+

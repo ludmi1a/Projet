@@ -1,0 +1,24 @@
+
+.text {
+	text-align : center;
+	font-family:  Courier;
+}
+
+.toutes{
+	margin-left: 25%;
+	width: 50%;
+	text-align: center;
+	
+}
+.image{
+	background-color: IndianRed;
+	height: 200px;
+	display: inline-block;
+	margin: 10px 50px 10px 50px;
+	padding: 1em;
+}
+
+#annonce{
+
+
+}
