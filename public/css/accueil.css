@@ -14,7 +14,8 @@
 
 .deuxblock{
 	text-align : center;
-	margin-top : 100px;
+	margin-left: 450px;
+	margin-right: 450px;
 }
 
 .block{
@@ -22,7 +23,6 @@
   width: 400px;
   border: solid 3px white;
   display: inline-block;
-  margin: 0px 120px 100px 120px;
   background-color: IndianRed;
   text-align: center;
   padding: 1em;
@@ -32,10 +32,12 @@
  }
 
 .right{
+  float: right;
   box-sizing:content-box;
 }
 
 .left{
+  float: left;
   box-sizing:content-box;
 }
 
@@ -43,6 +45,8 @@ a.block:hover {
   background-color: white;
   color: IndianRed;
   border: solid 3px IndianRed;
+  transition-duration: 1s;
+  font-size: 20px;
 }
 
 
