@@ -1,11 +1,11 @@
+
+
 .title{
-	position: relative;
-	text-align: left;
 	font-family: 'Raleway', sans-serif;
 }
-
 .logo{
-	float: left;
+  float: left;
+  margin-top: -10px;
 }
 
 a{
@@ -14,8 +14,8 @@ a{
 }
 
 h2{
-	color: IndianRed;
+	color: Teal;
 	font-weight: normal;
-	margin-left:40px;
+	margin-left:100px;
 }
 

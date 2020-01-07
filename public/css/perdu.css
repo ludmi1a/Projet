@@ -1,24 +1,190 @@
 
+
+
+body {
+
+	margin: 0 auto;
+	max-width: 100em;
+	height: 100%;
+	font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: grey;
+	text-align: left;
+	background: url(css/background3.jpg);
+	text-shadow: 0 .1rem .1rem rgba(0,0,0,.5);
+}
+
 .text {
 	text-align : center;
 	font-family:  Courier;
 }
 
+
 .toutes{
-	margin-left: 25%;
-	width: 50%;
+	margin-left: 10%;
+	width: 80%;
 	text-align: center;
 	
 }
 .image{
-	background-color: IndianRed;
+	background-color: Teal;
+	border-radius :25%;
 	height: 200px;
 	display: inline-block;
 	margin: 10px 50px 10px 50px;
 	padding: 1em;
 }
 
-#annonce{
 
-
+.block{
+	display : inline-block;
+	background-color:DarkRed;
+	border: .05rem solid DarkRed;
+	margin-left:50px;
+	margin-bottom:50px;
+	padding:20px;
+	border-radius:20%;
 }
+
+img{
+	border-radius:20%;
+}
+
+
+.barre{
+	margin-left:100px;
+	height : 100px;
+	width : 100%;
+	
+}
+
+.titre{
+	float: left;
+	width:30%;
+	display: inline-block;
+	height: 50px;
+	text-align: center;
+	padding-top:30px;
+	border-radius:20%
+}
+
+.lost{
+	background-color : white;
+	color: Teal;
+}
+.found{
+	background-color: Teal;
+	color: white;
+}
+
+
+
+
+a,
+a:focus,
+a:hover {
+  color: Teal;
+}
+
+/* Custom default button 
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` 
+  background-color: #fff;
+  border: .05rem solid #fff;
+}*/
+
+
+/* Les boutons chien, chats, autre
+	on ajoute le span car sans lui, le << est ajouté au block, non au mot
+*/
+ .button {
+  border-radius: 4px;
+  background-color: teal;
+  border: .05rem solid teal;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 30%;
+  transition: 0.5s;
+  margin: 5px;
+  
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-left: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  left: 0;
+}
+
+
+/*
+ * Base structure
+ */
+
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.page {
+  display: table;
+  width: 100%;
+  height: 100%;
+  
+}
+
+
+/* Padding for spacing */
+.inner {
+  padding: 2rem;
+}
+
+
+/*
+ * Header
+ */
+
+
+
+
+.link{
+  padding: .2rem 0;
+  font-weight: bold;
+  color: white;
+  border-bottom: .25rem solid transparent;
+	margin-left: 1rem;
+}
+
+.link:hover {
+  border-bottom-color: Teal;
+  color: black ;
+}
+
+
+.barre-link{
+	float: right;
+}
+
+

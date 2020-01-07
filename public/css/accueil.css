@@ -23,7 +23,7 @@
   width: 400px;
   border: solid 3px white;
   display: inline-block;
-  background-color: IndianRed;
+  background-color: Teal;
   text-align: center;
   padding: 1em;
   border-radius : 20%;
@@ -43,8 +43,8 @@
 
 a.block:hover {
   background-color: white;
-  color: IndianRed;
-  border: solid 3px IndianRed;
+  color: Teal;
+  border: solid 3px Teal;
   transition-duration: 1s;
   font-size: 20px;
 }
@@ -52,14 +52,14 @@ a.block:hover {
 
 
 h1{
-	color: IndianRed;
+	color: Teal;
 	font-weight: normal;
 	font-family: 'Playfair', serif;
 	font-size: 100px;
 }
 
 h2{
-	color: IndianRed;
+	color: Teal;
 	font-weight: normal;
 	margin-left:40px;
 }

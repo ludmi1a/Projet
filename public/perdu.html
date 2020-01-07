@@ -5,29 +5,39 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet"  href="css/perdu.css"/>
 		<link rel="stylesheet" href="css/syla.css"/>
-		<a href="accueil.html"><title>Perdu</title>
-		<div class="title" ><img src="css/logo.png" height ="30px" class="logo"></img><h2>SYLA</h2></div></a>
-	</head>
-	
-	<body>
-		<script src="./js/perdu.js"></script>
-		 <div class="text">
-			<p> Bonjour vous avez perdu votre animal ? Veuillez visualiser ci-dessous les annonces 	des animaux retrouvés :</p>
-		</div>
-		<div class="toutes">
-			<img src="images/chat1.JPG" height ="200" width="250" class="image">
-			<img src ="images/chat2.jpeg" height ="200" width="250" class="image">
-			<img src ="images/chien1.JPG" height ="200" width="250" class="image">
-			<img src ="images/lapin.jpeg" height ="200" width="250" class="image">
-			<img src ="images/chat3.jpeg" height ="200" width="250" class="image">
-			<img src ="images/oiseau1.jpeg"height ="200" width="250" class="image">
-		</div>
+		<script type="text/javascript" src="js/perdu.js"></script>
+		<link rel="javascript" type="text/javascript" href="index.js">
+                  <div class="inner">
+			<h1 class="logo"><a href="accueil.html"><title>Perdu</title>
+				<div class="title" ><img src="images/capture.png"height="80" width="230"></img></div></a>
+			</h1>
+			<nav class="barre-link">
+		              <a class="link" href="perdu.html"> Vous avez perdu votre animal</a>
+		              <a class="link" href="trouve.html"> Vous avez trouvé un animal</a>
+		              <a class="link" href="a_propos_site.html">About</a>
+		              <a class="link" href="formulaire_connexion.html"><i class="fas fa-user"></i> Connectez-vous</a>
+			</nav>
+                  </div>
 		
-	<div style="text-align:center">
-		<p class="text">Vous ne trouvez pas votre animal ci-dessus ? faites votre annonce !</p>
-		<button id="annonce">introduire une annonce</button>
-	</div>
-	</body>
+	</head>
+	    <body>
+        <div class="page">
+ 
+                <div class="inner">
+                  <p>Vous avez perdu votre animal ? Pas de panique ! Voici toute nos animaux retrouvés :</p>
+                  <p>Vous pouvez selectionner la race que vous cherchez :
+                    <nav>
+                    	<button class="button" onclick="showCats();" ><span>Chats </span></button>
+                    	<button class="button" onclick="showDogs();" ><span>Chiens</span></button>
+                    	<button class="button" onclick="showOthers();"><span>Autre</span></button>
+                    </nav> 
+                  </p>
+                </div>
+      		<button class="button" onclick ="showAnimals();">liste d'animaux</button>
+      		<div id="animals"></div>
+          </div>
+        
+    </body>
 	
 </html>
 
