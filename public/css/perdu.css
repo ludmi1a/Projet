@@ -1,26 +1,23 @@
 
-
-
-body {
-
-	margin: 0 auto;
-	max-width: 100em;
-	height: 100%;
-	font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-	font-size: 1rem;
-	font-weight: 400;
-	line-height: 1.5;
-	color: grey;
-	text-align: left;
-	background: url(css/background3.jpg);
-	text-shadow: 0 .1rem .1rem rgba(0,0,0,.5);
+.site-wrapper-inner {
+	display: table-cell;
+	vertical-align: top;
 }
+.cover-container {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
 
 .text {
 	text-align : center;
 	font-family:  Courier;
 }
 
+.page .inner{
+	background-color: coral;
+}
 
 .toutes{
 	margin-left: 10%;
@@ -40,8 +37,8 @@ body {
 
 .block{
 	display : inline-block;
-	background-color:DarkRed;
-	border: .05rem solid DarkRed;
+	background-color: coral;
+	border: .05rem solid coral;
 	margin-left:50px;
 	margin-bottom:50px;
 	padding:20px;
@@ -102,10 +99,10 @@ a:hover {
 /* Les boutons chien, chats, autre
 	on ajoute le span car sans lui, le << est ajouté au block, non au mot
 */
- .button {
+ nav .button {
   border-radius: 4px;
-  background-color: teal;
-  border: .05rem solid teal;
+  background-color: coral;
+  border: .05rem solid coral;
   color: white;
   text-align: center;
   font-size: 20px;
@@ -141,50 +138,23 @@ a:hover {
   left: 0;
 }
 
+p{
+	font-size: large;
+	color:white;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	text-align: center;
+}
 
-/*
- * Base structure
- */
+p+ button{
+	color: white;
+	transition: 0.5s;
+}
 
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.page {
-  display: table;
-  width: 100%;
-  height: 100%;
-  
+p+ button:hover{
+	font-size: larger;
+	transition: 0.5s;
 }
 
 
-/* Padding for spacing */
-.inner {
-  padding: 2rem;
-}
-
-
-/*
- * Header
- */
-
-
-
-
-.link{
-  padding: .2rem 0;
-  font-weight: bold;
-  color: white;
-  border-bottom: .25rem solid transparent;
-	margin-left: 1rem;
-}
-
-.link:hover {
-  border-bottom-color: Teal;
-  color: black ;
-}
-
-
-.barre-link{
-	float: right;
-}
 
 
