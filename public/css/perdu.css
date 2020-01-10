@@ -37,12 +37,18 @@
 
 .block{
 	display : inline-block;
-	background-color: coral;
-	border: .05rem solid coral;
+	text-align: left;
+	background-color: white;
+	color: teal;
+	border: 0.5rem solid coral;
 	margin-left:50px;
 	margin-bottom:50px;
 	padding:20px;
 	border-radius:20%;
+}
+
+.animals{
+	text-align: center;
 }
 
 img{
@@ -85,20 +91,7 @@ a:hover {
   color: Teal;
 }
 
-/* Custom default button 
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` 
-  background-color: #fff;
-  border: .05rem solid #fff;
-}*/
 
-
-/* Les boutons chien, chats, autre
-	on ajoute le span car sans lui, le << est ajouté au block, non au mot
-*/
  nav .button {
   border-radius: 4px;
   background-color: coral;
@@ -145,16 +138,23 @@ p{
 	text-align: center;
 }
 
-p+ button{
-	color: white;
+h1 .button{
+	color: teal;
+	transition: 0.5s;
+	font-size: 35px;
+	background-color : transparent;
+	border: 2px solid transparent;
+}
+
+h1 .button:hover{
+	font-size: 45px;
+	margin-top: -15px;
 	transition: 0.5s;
 }
 
-p+ button:hover{
-	font-size: larger;
-	transition: 0.5s;
+h1, h2{
+	text-align: center;
 }
-
 
 
 

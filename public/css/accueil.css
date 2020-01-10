@@ -1,4 +1,3 @@
-
 .image{
 	background-image : url(background3.jpg);
 	background-repeat : no-repeat;
@@ -7,15 +6,14 @@
 
 .block1 {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
 }
 
 
 .deuxblock{
 	text-align : center;
-	margin-left: 450px;
-	margin-right: 450px;
+	margin-left: 300px;
+	margin-right: 300px;
 }
 
 .block{
@@ -52,16 +50,10 @@ a.block:hover {
 
 
 h1{
-	color: Teal;
+	color: coral;
 	font-weight: normal;
 	font-family: 'Playfair', serif;
 	font-size: 100px;
-}
-
-h2{
-	color: Teal;
-	font-weight: normal;
-	margin-left:40px;
 }
 
 

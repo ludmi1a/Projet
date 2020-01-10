@@ -1,12 +1,36 @@
 const express = require('express');
-const mongoose = require('mangoose');
+const mongoose = require('mongoose');
+const nunjucks = require('nunjucks');
+const multer = require('multer');
 
-var app = express()
+const uploads = multer({
+	dest: __dirname/"uploads"
+});
 
-app.get('/*', function (req, res) {
-  res.sendStatus("404");
-})
+mongoose.connect('mongodb://localhost:3000/syla', {useNewUrlParser: true, useUnifiedTopology: true});
+		
+require('./models/Animal');
+require('./models/Type');
+
+const app = express();
+
+app.use(uploads.single('file'));
+
+app.use('/', require ('./routes/animals'));
+app.use('/types', require ('./routes/types'));
+
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
+nunjucks.configure('views', {
+	autoescape: true,
+	express: app,
+	noCache: false  
+});
+
+app.get('/',(req,res)=>{
+	res.send('Salut');
+});
 
 app.listen(3000, function () {
-  console.log('Application qui écoute sur le port 3000!');
+  console.log('Application écoute sur le port 3000!');
 })

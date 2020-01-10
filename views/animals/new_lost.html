@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+            <form method="POST">
+                <div class="form-group">
+			<label for="race">Race :</label>
+			<input type="text" id="race" name="race" class="form-control" value="{{pokemon.race}}" >
+		</div>
+		<div class="form-group">
+			<label for="sexe">sexe :</label>
+			<input type="text" id="sexe" name="sexe" class="form-control" value="{{pokemon.sexe}}" >
+		</div>
+                <div class="form-group">
+                    <label for="color">couleur :</label>
+			<input type="text" id="color" name="color" class="form-control" value="{{pokemon.color}}" >
+                </div>
+                <div class="form-group">
+			<label for="city">ville :</label>
+			<input type="text" id="city" name="city" class="form-control" value="{{pokemon.city}}" >
+                </div>
+                <div class="form-group">
+                    <label for="file">Image</label>
+                    <input type="file" id="file" name="file">
+                </div>
+                <input type="submit" class="btn btn-primary" value="Enregistrer">
+	
+            </form>
+        
+
+{% endblock %}
