@@ -1,0 +1,22 @@
+{% extends "style.html" %}
+
+{% block content %}
+			<div class="site-wrapper-inner">
+			<div class="cover-container">
+				<div class="inner">
+                  <h1>VOUS AVEZ TROUVÉ UN ANIMAL PERDU ? </h1>
+                  <h2>Vous pouvez selectionner la race de l'animal :</h2>
+                    <nav>
+                    	<button class="button" onclick="showCats();" ><span>Chats </span></button>
+                    	<button class="button" onclick="showDogs();" ><span>Chiens</span></button>
+                    	<button class="button" onclick="showOthers();"><span>Autre</span></button>
+                    </nav> 
+				</div>
+			
+			<h1>OU ALORS, vous pouvez avoir accès à toutes les annonces 
+			  <button class="button" onclick ="showAnimals();">d'animaux perdus</button>
+			</h1>
+      		<div class="animals" id="animals"></div>
+		</div>
+		</div>
+{% endblock %}
