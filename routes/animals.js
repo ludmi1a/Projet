@@ -4,21 +4,24 @@ const router = express.Router();
 const Animal = require('./../models/Animal');
 const Type = require('./../models/Type');
 
-const perdu = new Type();
-perdu.name = "Perdu";
-const retrouve = new Type();
-retrouve.name = "Retrouvé";
-const types  = [perdu, retrouve];
+const lost = new Type();
+lost.name = "Perdu";
+const found = new Type();
+found.name = "Retrouvé";
+const types  = [lost, found];
 
-/*async function getAnimals() {
-  const Animals = await Animal.find();
-  console.log(Animals);
-}*/
+const a  = new Animal({
+	race: "chien",
+	couleur : "beige",
+	ville : "paris",
+	sexe : "male"
+})
 
 
-router.get('/',function (req,res){
+var animals = Animal.find({});
+
+router.get('/index',function (req,res){
 	console.log('hello');
-	const animals = Animal.find({});
 	console.log(animals);
 	res.render('./../views/animals/index.html', {animals : animals});
 	
@@ -36,13 +39,12 @@ router.get('/infos', (req,res)=>{
 
 router.get('/type/:type', (req,res)=>{
 	console.log('hello');
-//	Type.findOne({name: req.params.type}).populate('animals').then(type => {
-		if (req.params.type == "perdu")	{
-			res.render('./../views/perdu.html');
-		}
-		else {
-			if(req.params.type == "trouve") {
-				res.render('./../views/trouve.html');
+	if (req.params.type == "perdu")	{
+		res.render('./../views/perdu.html', {animals : lost.animals});
+	}
+	else {
+		if(req.params.type == "trouve") {
+		res.render('./../views/trouve.html', {animals : found.animals});
 			}
 		}
 //	});
@@ -54,22 +56,39 @@ router.get('/new', (req,res)=> {
 });
 
 router.get('/:id',function (req,res){
-	Animal.findById(req.params.id).populate('type').then(animal => {
-		res.render('animals/show.html', {animal : animal});	
+	let promise = new Promise(function(resolve, reject) {
+		const animal = Animal.findById(req.params.id);
+		setTimeout(() => resolve("done"), 1000);
 	});
+	
+	promise.then(
+	  function(result) { res.render('animals/show.html', {animal : animal});
+		console.log(animal); },
+	  function(error) { console.log(errrrreur); }
+	);
+	
 });
 
 router.post('/new', (req, res)=> {
 	console.log('le post');
-		animal = new Animal();
-		animal.race = req.body.race;
-		animal.color = req.body.color;
-		animal.sexe = req.body.sexe;
-		animal.city = req.body.city;
-		
-		if(req.file) animal.picture = req.file.filename;
-		console.log(req.body);
-		res.redirect('/');
+	
+	const animal = new Animal()
+	animal.race = req.body.race;
+	animal.sexe = req.body.sexe;
+	animal.city = req.body.city;
+	animal.type = req.body.type;
+	if(req.file) animal.picture = req.file.filename ;
+	
+	let promise = new Promise(function(resolve, reject) {
+		animal.save();
+		setTimeout(() => resolve("done"), 1000);
+	});
+	promise.then(
+	  function(result) { console.log(animal);
+		res.redirect('/'+animal._id );},
+	  function(error) { console.log(errrrreur); }
+	);
+	
 });
 
 

@@ -8,8 +8,15 @@ const upload = multer({
 	dest: __dirname/"upload"
 });
 
-mongoose.connect('mongodb://localhost:3000/syla', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb://localhost:3000/syla", {useNewUrlParser: true, useUnifiedTopology: true});
 		
+var db=mongoose.connection;
+
+db.on('error', console.log.bind(console, "Erreur connexion")); 
+db.once('open', function(callback){ 
+    console.log("Connecté"); 
+}) 
+
 require('./models/Animal');
 require('./models/Type');
 
