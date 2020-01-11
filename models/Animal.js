@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const animalSchema = new mongoose.Schema({
-	id: Number,	
 	race: String,
 	color: String,
 	city: String,

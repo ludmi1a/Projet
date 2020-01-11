@@ -2,24 +2,33 @@
 
 {% block content %}
 
-            <form method="POST">
-                <div class="form-group">
+            <form method="POST" enctype='multipart/form-data'>
+				<div>
+					<h3>Vous voulez déposer une annonce pour un animal :</h3>
+					{% for type in types %}
+					<input type="radio" name="type" id="perdu" value={{type._id}}>{{type.name}}
+					{% endfor %}
+				</div>
+                <div>
 					<label for="race">Race :</label>
-					<input type="text" id="race" name="race" class="form-control" value="{{pokemon.race}}" >
+					<input type="radio" id='race' name='race' class="form-control" value="Chien" >Chien
+					<input type="radio" id='race' name='race' class="form-control" value="Chat" >Chat
+					<input type="radio" id='race' name='race' class="form-control" value="Autre"  >Autre
 				</div>
-				<div class="form-group">
+				<div>
 					<label for="sexe">sexe :</label>
-					<input type="text" id="sexe" name="sexe" class="form-control" value="{{pokemon.sexe}}" >
+					<input type="radio" id="sexe" name="sexe" class="form-control" value="Male">Male
+					<input type="radio" id="sexe" name="sexe" class="form-control" value="Female">Female
 				</div>
-				<div class="form-group">
+				<div>
 					<label for="color">couleur :</label>
-					<input type="text" id="color" name="color" class="form-control" value="{{pokemon.color}}" >
+					<input type="text" id="color" name="color" class="form-control" >
 				</div>
-				<div class="form-group">
+				<div>
 					<label for="city">ville :</label>
-					<input type="text" id="city" name="city" class="form-control" value="{{pokemon.city}}" >
+					<input type="text" id="city" name="city" class="form-control">
 				</div>
-				<div class="form-group">							
+				<div>							
 					<label for="file">Image</label>
 					<input type="file" id="file" name="file">
 				</div>

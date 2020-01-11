@@ -8,14 +8,14 @@
                   <h1>VOUS AVEZ PERDU VOTRE ANIMAL ? PAS DE PANIQUE</h1>
                   <h2>Vous pouvez selectionner la race que vous cherchez :</h2>
                     <nav>
-                    	<button class="button" onclick="showCats();" ><span>Chats </span></button>
-                    	<button class="button" onclick="showDogs();" ><span>Chiens</span></button>
-                    	<button class="button" onclick="showOthers();"><span>Autre</span></button>
+                    	<button class="button" onclick="show('Chat');" ><span>Chats </span></button>
+                    	<button class="button" onclick="show('Chien');" ><span>Chiens</span></button>
+                    	<button class="button" onclick="show('Autre');"><span>Autre</span></button>
                     </nav> 
 				</div>
 			
 			<h1>OU ALORS, vous pouvez avoir accès à tout nos
-			  <button class="button" onclick ="showAnimals();">animaux retrouvés</button>
+			  <button class="button" onclick ="show('all');">animaux retrouvés</button>
 			</h1>
       		<div class="animals" id="animals"></div>
 			</div>

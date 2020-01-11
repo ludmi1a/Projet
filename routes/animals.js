@@ -2,15 +2,29 @@ const express = require('express');
 const router = express.Router();
 
 const Animal = require('./../models/Animal');
+const Type = require('./../models/Type');
 
-/*router.get('/',function (req,res){
+const perdu = new Type();
+perdu.name = "Perdu";
+const retrouve = new Type();
+retrouve.name = "Retrouvé";
+const types  = [perdu, retrouve];
+
+/*async function getAnimals() {
+  const Animals = await Animal.find();
+  console.log(Animals);
+}*/
+
+
+router.get('/',function (req,res){
 	console.log('hello');
-	Animal.find({}).then(animals => {
-		console.log('hello2');
-		res.render('./../views/animals/index.html', {animals : animals});
-	});
+	const animals = Animal.find({});
+	console.log(animals);
+	res.render('./../views/animals/index.html', {animals : animals});
 	
-});*/
+});
+
+
 
 router.get('/', (req,res)=>{
 	res.render('./../views/accueil.html');
@@ -21,14 +35,22 @@ router.get('/infos', (req,res)=>{
 });
 
 router.get('/type/:type', (req,res)=>{
-	if (req.params.type == "perdu")	res.render('./../views/perdu.html');
-	else 
-		if(req.params.type == "trouve") res.render('./../views/trouve.html');
+	console.log('hello');
+//	Type.findOne({name: req.params.type}).populate('animals').then(type => {
+		if (req.params.type == "perdu")	{
+			res.render('./../views/perdu.html');
+		}
+		else {
+			if(req.params.type == "trouve") {
+				res.render('./../views/trouve.html');
+			}
+		}
+//	});
 });
 
 router.get('/new', (req,res)=> {
 	const animal = new Animal();
-	res.render('./../views/animals/new_lost.html', {animal : animal});
+	res.render('./../views/animals/new_lost.html', {types: types});
 });
 
 router.get('/:id',function (req,res){
@@ -39,17 +61,18 @@ router.get('/:id',function (req,res){
 
 router.post('/new', (req, res)=> {
 	console.log('le post');
-	const animal = new Animal();
-		animal.race = animal.body.race;
-		animal.color = animal.body.color;
-		animal.sexe = animal.body.sexe;
-		animal.city = animal.body.city;
+		animal = new Animal();
+		animal.race = req.body.race;
+		animal.color = req.body.color;
+		animal.sexe = req.body.sexe;
+		animal.city = req.body.city;
 		
 		if(req.file) animal.picture = req.file.filename;
-	
-		animal.save(); 
-		res.redirect('/accueil');
+		console.log(req.body);
+		res.redirect('/');
 });
+
+
 
 module.exports = router;
 
