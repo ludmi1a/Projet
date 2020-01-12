@@ -2,10 +2,15 @@
 
 {% block content %}
 	<div class="row">
-		<div class="col-sm-3">
+		<div class="col left">
 		</div>
-		<div class="col-sm-9">
+		<div class="col right">
 			<h2>{{animal.race}} {{animal.type.name}}</h2>
+			<ul>
+				<li>Couleur : {{animal.color}}</li>
+				<li>Sexe : {{animal.sexe}}</li>
+				<li>Ville : {{animal.city}}</li>
+			</ul>
 		</div>
 	</div>
 

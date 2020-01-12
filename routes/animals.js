@@ -18,13 +18,16 @@ const a  = new Animal({
 })
 
 
-var animals = Animal.find({});
-
 router.get('/index',function (req,res){
-	console.log('hello');
-	console.log(animals);
-	res.render('./../views/animals/index.html', {animals : animals});
-	
+	let promise = new Promise(function(resolve, reject) {
+		var animals = Animal.find({});
+		setTimeout(() => resolve("done"), 1000);
+	});
+	promise.then(
+	  function(result) { console.log(animal);
+		res.render('./../views/animals/index.html', {animals : animals}); },
+	  function(error) { console.log(errrrreur); }
+	);
 });
 
 
@@ -64,7 +67,7 @@ router.get('/:id',function (req,res){
 	promise.then(
 	  function(result) { res.render('animals/show.html', {animal : animal});
 		console.log(animal); },
-	  function(error) { console.log(errrrreur); }
+	  function(error) { console.log("Erreur"); }
 	);
 	
 });
@@ -74,12 +77,15 @@ router.post('/new', (req, res)=> {
 	
 	const animal = new Animal()
 	animal.race = req.body.race;
+	animal.color = req.body.color;
 	animal.sexe = req.body.sexe;
 	animal.city = req.body.city;
 	animal.type = req.body.type;
 	if(req.file) animal.picture = req.file.filename ;
 	
-	let promise = new Promise(function(resolve, reject) {
+	res.render('animals/show.html', {animal : animal});
+	
+	/*let promise = new Promise(function(resolve, reject) {
 		animal.save();
 		setTimeout(() => resolve("done"), 1000);
 	});
@@ -87,7 +93,7 @@ router.post('/new', (req, res)=> {
 	  function(result) { console.log(animal);
 		res.redirect('/'+animal._id );},
 	  function(error) { console.log(errrrreur); }
-	);
+	);*/
 	
 });
 

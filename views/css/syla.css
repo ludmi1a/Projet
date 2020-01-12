@@ -9,8 +9,6 @@ body {
 	font-weight: 400;
 	line-height: 1.5;
 	color: white;
-	text-align: left;
-	text-shadow: 0 .1rem .1rem rgba(0,0,0,.5);
 }
 
 .title{
@@ -29,6 +27,7 @@ body {
 }
 
 .inner {
+  text-align: center;
   padding: 2.5rem;
 }
 
@@ -40,13 +39,19 @@ a{
 h2{
 	color: Teal;
 	font-weight: normal;
-	margin-left:100px;
+	text-shadow: 0 .1rem .1rem rgba(0,0,0,.5);
 }
+
+h1{
+  text-shadow: 0 .1rem .1rem rgba(0,0,0,.5);
+ }
+ 
 .link{
   padding: 0.5 rem 0;
   font-weight: bold;
-  color: white;
-	margin-left: 2rem;
+  color: AliceBlue;
+  margin-left: 2rem;
+  text-shadow: 0 .1rem .1rem rgba(0,0,0,.5);
 }
 
 .link:hover {

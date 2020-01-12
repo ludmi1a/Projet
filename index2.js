@@ -10,7 +10,7 @@ const upload = multer({
 
 mongoose.connect("mongodb://localhost:3000/syla", {useNewUrlParser: true, useUnifiedTopology: true});
 		
-var db=mongoose.connection;
+var db = mongoose.connection;
 
 db.on('error', console.log.bind(console, "Erreur connexion")); 
 db.once('open', function(callback){ 
@@ -26,11 +26,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(upload.single('file'));
 
 app.use('/css', express.static(__dirname + '/views/css'));
+app.use('/boot', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
 app.use('/images', express.static(__dirname + '/views/images'));
 app.use('/upload', express.static(__dirname + '/upload'));
 
 app.use('/', require ('./routes/animals'));
-app.use('/types', require ('./routes/types'));
 
 
 nunjucks.configure('views', {

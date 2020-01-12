@@ -73,27 +73,14 @@ img{
 	border-radius:20%
 }
 
-.lost{
-	background-color : white;
-	color: Teal;
-}
-.found{
-	background-color: Teal;
-	color: white;
-}
-
-
-
 
 a,
-a:focus,
 a:hover {
   color: Teal;
 }
 
 
  nav .button {
-  border-radius: 4px;
   background-color: coral;
   border: .05rem solid coral;
   color: white;
