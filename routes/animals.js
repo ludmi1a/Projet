@@ -65,7 +65,7 @@ router.get('/:id',function (req,res){
 	});
 	
 	promise.then(
-	  function(result) { res.render('animals/show.html', {animal : animal});
+	  function(result) { res.render('./../views/animals/show.html', {animal : animal});
 		console.log(animal); },
 	  function(error) { console.log("Erreur"); }
 	);
@@ -83,7 +83,7 @@ router.post('/new', (req, res)=> {
 	animal.type = req.body.type;
 	if(req.file) animal.picture = req.file.filename ;
 	
-	res.render('animals/show.html', {animal : animal});
+	res.render('./../views/animals/show.html', {animal : animal});
 	
 	let promise = new Promise(function(resolve, reject) {
 		animal.save();
