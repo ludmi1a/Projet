@@ -7,10 +7,7 @@ const animalSchema = new mongoose.Schema({
 	city: String,
 	sexe: String,
 	picture: String,
-	type: {
-		type: mongoose.Schema.Types.ObjectId,
-		ref: 'Type'
-	}
+	type: String
 });
 
 const Animal = mongoose.model('Animal', animalSchema);

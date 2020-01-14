@@ -25,15 +25,16 @@ db.once('open', function(callback){
 }) 
 
 require('./models/Animal');
-require('./models/Type');
+//require('./models/Type');
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(upload.single('file'));
 
+
 app.use('/css', express.static(__dirname + '/views/css'));
-app.use('/boot', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+app.use('/js', express.static(__dirname + '/views/js'));
 app.use('/images', express.static(__dirname + '/views/images'));
 app.use('/upload', express.static(__dirname + '/upload'));
 

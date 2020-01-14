@@ -1,4 +1,4 @@
-/*var animals = [   ["chien", "noir", "paris","femelle","images/chien1.jpg"],
+var animals = [   ["chien", "noir", "paris","femelle","images/chien1.jpg"],
 		  ["chat", "marron", "lille","male","images/chat1.jpg"],
 		  ["chien","beige","lyon","male","images/chat2.jpeg"],
 		  ["autre","blanc","paris","male","images/lapin.jpeg"]
@@ -6,7 +6,8 @@
 var i=0;
 var currentPage=null;
 
-function showAnimals(){
+function show(type){
+if (type == 'all'){
 	if(currentPage!="all"){
 		var code = "";
 		for(i=0;i<animals.length;i++){
@@ -22,7 +23,7 @@ function showAnimals(){
 	
 }
 
-function showDogs(){
+if(type=='Chien'){
 	if(currentPage!="dogs"){
 		var tab=[];
 		var j=0;
@@ -45,7 +46,7 @@ function showDogs(){
 	currentPage="dogs";
 }
 
-function showCats(){
+if(type=='Autre'){
 	if(currentPage!="cats"){
 		var tab=[];
 		var j=0;
@@ -92,8 +93,8 @@ function showOthers(){
 	}
 	currentPage="others";
 }
-*/
 
+/*
 function show(String type){
 	if(type=="all"){
 		document.getElementsById("animals").innerHTML = "{% for a in animals %} <div class=block id='{{a.race}}'><img src='/uploads/{{a._id}}' height=280px width=300px></img><ul><li>Race : {{a.race}}</li><li>Couleur : {{a.color}}</li><li>Ville : {{a.city}}</li><li>Sexe:{{a.sexe}}</ul></div> {% endblock %}"
@@ -101,3 +102,4 @@ function show(String type){
 		document.getElementsById("animals").innerHTML = "{% for a in animals %} {% if a.race==type %}  <div class=block id='{{a.race}}'><img src='/uploads/{{a._id}}' height=280px width=300px></img><ul><li>Race : {{a.race}}</li><li>Couleur : {{a.color}}</li><li>Ville : {{a.city}}</li><li>Sexe:{{a.sexe}}</ul></div> {% endfor %}{% endblock %}"
 	}
 }
+*/

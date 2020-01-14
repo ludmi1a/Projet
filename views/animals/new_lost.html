@@ -5,9 +5,8 @@
             <form method="POST" enctype='multipart/form-data'>
 				<div class='inner'>
 					<h1 style='color: white;'>Vous voulez déposer une annonce pour un animal :</h1>
-					{% for type in types %}
-					<input type="radio" name="type" id="perdu" value={{type._id}}>{{type.name}}
-					{% endfor %}
+					<input type="radio" name='type' id="perdu" value="Perdu">Perdu
+					<input type="radio" name='type' id="troué" value="Trouvé">Trouvé
 				</div>
                 
 					<div>
