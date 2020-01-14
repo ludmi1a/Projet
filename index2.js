@@ -8,7 +8,14 @@ const upload = multer({
 	dest: __dirname/"upload"
 });
 
-mongoose.connect("mongodb://localhost:3000/syla", {useNewUrlParser: true, useUnifiedTopology: true});
+let project_name = "syla";
+let user_name = "user_project_2";
+
+let pwd = "bruno_brownie";
+
+const uri = "mongodb+srv://" + user_name + ":" + pwd + "@dant-kkn0r.mongodb.net/"+ project_name + "?retryWrites=true&w=majority";
+
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 		
 var db = mongoose.connection;
 

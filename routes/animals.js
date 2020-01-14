@@ -24,7 +24,7 @@ router.get('/index',function (req,res){
 		setTimeout(() => resolve("done"), 1000);
 	});
 	promise.then(
-	  function(result) { console.log(animal);
+	  function(result) { console.log(animals);
 		res.render('./../views/animals/index.html', {animals : animals}); },
 	  function(error) { console.log(errrrreur); }
 	);
@@ -75,7 +75,7 @@ router.get('/:id',function (req,res){
 router.post('/new', (req, res)=> {
 	console.log('le post');
 	
-	const animal = new Animal()
+	const animal = new Animal();
 	animal.race = req.body.race;
 	animal.color = req.body.color;
 	animal.sexe = req.body.sexe;
@@ -85,7 +85,7 @@ router.post('/new', (req, res)=> {
 	
 	res.render('animals/show.html', {animal : animal});
 	
-	/*let promise = new Promise(function(resolve, reject) {
+	let promise = new Promise(function(resolve, reject) {
 		animal.save();
 		setTimeout(() => resolve("done"), 1000);
 	});
@@ -93,7 +93,7 @@ router.post('/new', (req, res)=> {
 	  function(result) { console.log(animal);
 		res.redirect('/'+animal._id );},
 	  function(error) { console.log(errrrreur); }
-	);*/
+	);
 	
 });
 
