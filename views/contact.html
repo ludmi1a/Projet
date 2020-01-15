@@ -1,23 +1,27 @@
-{% extends "show.html" %}
+{% extends "style.html" %}
 
 {% block content %}
 
-<form action="/contact" id="contact-form" method="post" role="form">
-  <fieldset>
-    <label for="name">Name</label>
-    <input id="name"  name="name" type="text" placeholder="Your name" >
-      required
-
-    <label for="email">Email</label>
-    <input id="email" name="email"  type="text" placeholder="Your email" >required
+<form method="POST">
+  <div class='inner'>
+    <h1 style='color: white;'>Pour nous contacter :</h1>=
+  </div>
+          
+    <div>
+      <label for="name">Votre nom :</label>
+      <input type="text" id="name" name="name">
+    </div>
+    <div>
+      <label for="subject">Sujet :</label>
+      <input type="text" id="subject" name="subject">
+    </div>
+    <div>
+      <label for="message">Message :</label>
+      <textarea id="message" name="message"></textarea>
+    </div>
     
-    <label for="message">Message</label>
-    <textarea id="message"  name="message" placeholder="Enter your message here" rows="3" >
-      required
-    </textarea>
+      <input type="submit" value="Enregistrer">
 
-    <button type="submit">Submit</button>
-  </fieldset>
-</form>
+      </form>
 
 {% endblock %}
