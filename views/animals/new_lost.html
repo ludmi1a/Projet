@@ -2,7 +2,7 @@
 
 {% block content %}
 
-            <form method="POST" enctype='multipart/form-data'>
+            <form method="POST" enctype="multipart/form-data">
 				<div class='inner'>
 					<h1 style='color: white;'>Vous voulez déposer une annonce pour un animal :</h1>
 					<input type="radio" name='type' id="perdu" value="Perdu">Perdu
@@ -11,28 +11,28 @@
                 
 					<div>
 						<label for="race">Race :</label>
-						<input type="radio" id='race' name='race' class="form-control" value="Chien" >Chien
-						<input type="radio" id='race' name='race' class="form-control" value="Chat" >Chat
-						<input type="radio" id='race' name='race' class="form-control" value="Autre">Autre
+						<input type="radio" id='race' name='race' value="Chien" >Chien
+						<input type="radio" id='race' name='race' value="Chat" >Chat
+						<input type="radio" id='race' name='race' value="Autre">Autre
 					</div>
 					<div>
 						<label for="sexe">Sexe :</label>
-						<input type="radio" id="sexe" name="sexe" class="form-control" value="Male">Male
-						<input type="radio" id="sexe" name="sexe" class="form-control" value="Female">Female
+						<input type="radio" id="sexe" name="sexe"  value="Male">Male
+						<input type="radio" id="sexe" name="sexe" value="Female">Female
 					</div>
 					<div>
 						<label for="color">Couleur :</label>
-						<input type="text" id="color" name="color" class="form-control" >
+						<input type="text" id="color" name="color">
 					</div>
 					<div>
 						<label for="city">Ville :</label>
-						<input type="text" id="city" name="city" class="form-control">
+						<input type="text" id="city" name="city">
 					</div>
 					<div>							
 						<label for="file">Image</label>
 						<input type="file" id="file" name="file">
 					</div>
-						<input type="submit" class="btn btn-primary" value="Enregistrer">
+						<input type="submit" value="Enregistrer">
 			
             </form>
         

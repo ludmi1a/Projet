@@ -4,7 +4,7 @@
 
 {% for a in animals %}
 <a href='/{{a._id}}' class=block id={{a.race}}>
-    <img src={{a.picture}} height=280px width=300px></img>
+    <img src="/upload/{{a.picture}}" alt="{{a.race}}" height=280px width=300px></img>
     <ul>
         <li>Race : {{a.race}}</li>
         <li>Couleur : {{a.color}}</li>
