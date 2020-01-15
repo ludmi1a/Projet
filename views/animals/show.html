@@ -2,7 +2,7 @@
 
 {% block content %}
 	<div class="infos">
-			<h2>{{animal.race}} {{animal.type}}</h2>
+			<h1 style='color: white;' class='inner'>{% if animal.race == "Autre" %} Animal {% else %} {{animal.race}} {% endif %} {{animal.type}}</h1>
 			<ul style='color:black;'>
 				<li>Couleur : {{animal.color}}</li>
 				<li>Sexe : {{animal.sexe}}</li>
