@@ -7,16 +7,17 @@
 					<h1>VOUS AVEZ TROUVÉ UN ANIMAL PERDU ? </h1>
 					<h2>Vous pouvez selectionner la race de l'animal :</h2>
 						<nav>
-							<button class="button" onclick="showCats();" ><span>Chats </span></button>
-							<button class="button" onclick="showDogs();" ><span>Chiens</span></button>
-							<button class="button" onclick="showOthers();"><span>Autre</span></button>
+							<a href='/trouve/cats'><button class="button"><span>Chats </span></button></a>
+							<a href='/trouve/dogs'><button class="button"><span>Chiens</span></button></a>
+							<a href='/trouve/others'><button class="button" ><span>Autre</span></button></a>
 						</nav> 
 					</div>
 				
 					<h1 style='color: DarkSlateGray;'>OU ALORS, vous pouvez avoir accès à toutes les annonces 
-						<button class="button" onclick ="showAnimals();">d'animaux perdus</button>
+						<a href='/trouve/all'><button class="button" onclick ="showAnimals();">d'animaux perdus</button></a>
 					</h1>
-					<div class="animals" id="animals"></div>
+					<div class="animals" id="animals"> {% block annonce %} {% endblock %}</div>
+
 				</div>
 			</div>
 {% endblock %}

@@ -1,9 +1,9 @@
-{% extends "perdu.html" %}
+{% extends "trouve.html" %}
 
 {% block annonce %}
 
 {% for a in animals %}
-<div class=block id={{a.race}}>
+<a href='/{{a._id}}' class=block id={{a.race}}>
     <img src={{a.picture}} height=280px width=300px></img>
     <ul>
         <li>Race : {{a.race}}</li>
@@ -11,7 +11,7 @@
         <li>Ville : {{a.city}}</li>
         <li>Sexe:{{a.sexe}}</li>
     </ul>
-</div>
+</a>
 
 {% endfor %}
 

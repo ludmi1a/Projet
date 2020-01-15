@@ -46,14 +46,50 @@ router.get('/new', (req,res)=> {
 	res.render('./../views/animals/new_lost.html');
 });
 
+router.get('/trouve/all', (req,res)=> {
+	const all = [];
+	for(let i=0; i<animals.length; i++){
+		if(animals[i].type == "Perdu"){ all.push(animals[i]);}
+	}
+	res.render('./../views/all_lost.html', {animals : all});
+});
+
+router.get('/trouve/cats', (req,res)=> {
+	const cats = [];
+	for(let i=0; i<animals.length; i++){
+		if(animals[i].race=="Chat" && animals[i].type == "Perdu"){ cats.push(animals[i]);}
+	}
+	res.render('./../views/cats_lost.html', {animals : cats});
+});
+
+router.get('/trouve/dogs', (req,res)=> {
+	const dogs = [];
+	for(let i=0; i<animals.length; i++){
+		if(animals[i].race=="Chien" && animals[i].type == "Perdu"){ dogs.push(animals[i]);}
+	}
+	res.render('./../views/dogs_lost.html', {animals : dogs});
+});
+
+router.get('/trouve/others', (req,res)=> {
+	const others = [];
+	for(let i=0; i<animals.length; i++){
+		if(animals[i].race=="Autre" && animals[i].type == "Perdu"){ others.push(animals[i]);}
+	}
+	res.render('./../views/others_lost.html', {animals : others});
+});
+
 router.get('/perdu/all', (req,res)=> {
-	res.render('./../views/all_found.html', {animals : animals});
+	const all = [];
+	for(let i=0; i<animals.length; i++){
+		if(animals[i].type == "Trouvé"){ all.push(animals[i]);}
+	}
+	res.render('./../views/all_found.html', {animals : all});
 });
 
 router.get('/perdu/cats', (req,res)=> {
 	const cats = [];
 	for(let i=0; i<animals.length; i++){
-		if(animals[i].race=="Chat"){ cats.push(animals[i]);}
+		if(animals[i].race=="Chat" && animals[i].type == "Trouvé"){ cats.push(animals[i]);}
 	}
 	res.render('./../views/cats_found.html', {animals : cats});
 });
@@ -61,7 +97,7 @@ router.get('/perdu/cats', (req,res)=> {
 router.get('/perdu/dogs', (req,res)=> {
 	const dogs = [];
 	for(let i=0; i<animals.length; i++){
-		if(animals[i].race=="Chien"){ cats.push(animals[i]);}
+		if(animals[i].race=="Chien" && animals[i].type == "Trouvé"){ dogs.push(animals[i]);}
 	}
 	res.render('./../views/dogs_found.html', {animals : dogs});
 });
@@ -69,31 +105,23 @@ router.get('/perdu/dogs', (req,res)=> {
 router.get('/perdu/others', (req,res)=> {
 	const others = [];
 	for(let i=0; i<animals.length; i++){
-		if(animals[i].race=="Autre"){ cats.push(animals[i]);}
+		if(animals[i].race=="Autre" && animals[i].type == "Trouvé"){ others.push(animals[i]);}
 	}
 	res.render('./../views/others_found.html', {animals : others});
 });
 
 
 
-router.get('/:type/:id',function (req,res){
-/*	var animal;
-	if(req.params.type == "lost"){
-		for(var i; i<lost_animals.length; i++){
-			if(req.params.id == lost_animals[i].__id){ animal = found_animals[i]; }
-		}
-	} if(req.params.type="found"){
-		for(var i; i<found_animals.length; i++){
-			if(req.params.id == found_animals[i].__id){ animal = lost_animals[i]; }
-		}
+router.get('/:id',function (req,res){
+for(let i=0; i<animals.length;i++){
+	if(req.params.id==animals[i]._id){
+		res.render('./../views/animals/show.html', {animal : animals[i]});
 	}
-	
-	res.render('./../views/animals/show.html', {animal : animal});*/
+}
 });
 
 router.post('/new', (req, res)=> {
-	console.log('le post');
-	
+
 	const animal = new Animal();
 	animal.race = req.body.race;
 	animal.color = req.body.color;
@@ -103,7 +131,7 @@ router.post('/new', (req, res)=> {
 	if(req.file) animal.picture = req.file.filename ;
 	
 	animals.push(animal);
-	
+	console.log("Ajout de "+animal+" a la liste")
 	res.redirect('/');
 });
 
