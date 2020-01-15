@@ -3,7 +3,7 @@ const router = express.Router();
 
 const Animal = require('./../models/Animal');
 const Type = require('./../models/Type');
-
+const nodemailer =require('nodemailer');
 var animals = [];
 
 
@@ -137,7 +137,32 @@ router.post('/new', (req, res)=> {
 	console.log("Ajout de "+animal+" a la liste")
 	res.redirect('/');
 });
-
+router.post('/contact' ,function(req,res){
+	var transporter = nodemailer.createTransport({
+		service: "Gmail",
+		auth : { 
+			user : 'syladant@gmail.com',
+			pass : 'syladant',
+		}
+	});
+	var mailOptions = {
+		from : "syladant@gmail.com",
+		to : "syladant@gmail.com",
+		subject :" animal retrouvé ",
+		text : "helloword ",
+		html : 'output',
+	}
+	transporter.sendMail(mailOptions, function(error , info){
+		if (error){
+			console.log(error);
+			res.redirect('/');
+		}else {
+			console.log('message sent : %s',info.response);
+			res.render('contact',{msg:'votre message a été envoyé !'})
+		}
+		transporter.close();
+	});
+});
   
 
 module.exports = router;
