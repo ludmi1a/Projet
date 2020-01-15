@@ -9,7 +9,7 @@ var animals = [];
 
 
 router.get('/index',function (req,res){
-//	res.render('./../views/animals/index.html', {animals : lost_animals}); 
+
 	let promise = new Promise(function(resolve, reject) {
 		var animals = Animal.find({});
 		setTimeout(() => resolve("done"), 1000);
@@ -138,14 +138,6 @@ router.post('/new', (req, res)=> {
 	res.redirect('/');
 });
 
-router.post('/contact',(req ,res)=> {
-	var message = {
-  from: "sender@server.com",
-  to: "receiver@sender.com",
-  subject: "Message title",
-  text: "Plaintext version of the message",
-  html: "<p>HTML version of the message</p>"
-};
   
 
 module.exports = router;

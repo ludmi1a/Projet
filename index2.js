@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const nunjucks = require('nunjucks');
 const multer = require('multer');
 const bodyParser = require('body-parser');
-//const nodemailer = require('nodemailer');
+
 
 const upload = multer({
 	dest: __dirname/"upload"
