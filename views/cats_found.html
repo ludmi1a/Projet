@@ -1,0 +1,20 @@
+{% extends "perdu.html" %}
+
+{% block annonce %}
+
+{% for a in animals %}
+
+<div class=block id={{a.race}}>
+    <img src={{a.picture}} height=280px width=300px></img>
+    <ul>
+        <li>Race : {{a.race}}</li>
+        <li>Couleur : {{a.color}}</li>
+        <li>Ville : {{a.city}}</li>
+        <li>Sexe:{{a.sexe}}</li>
+    </ul>
+</div>
+
+
+{% endfor %}
+
+{% endblock %}

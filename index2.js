@@ -25,7 +25,7 @@ db.once('open', function(callback){
 }) 
 
 require('./models/Animal');
-//require('./models/Type');
+require('./models/Type');
 
 const app = express();
 

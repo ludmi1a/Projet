@@ -1,17 +1,13 @@
 {% extends "style.html" %}
 
 {% block content %}
-	<div class="row">
-		<div class="col left">
-		</div>
-		<div class="col right">
+	<div class="infos">
 			<h2>{{animal.race}} {{animal.type}}</h2>
 			<ul style='color:black;'>
 				<li>Couleur : {{animal.color}}</li>
 				<li>Sexe : {{animal.sexe}}</li>
 				<li>Ville : {{animal.city}}</li>
 			</ul>
-		</div>
 	</div>
 
 {% endblock %}

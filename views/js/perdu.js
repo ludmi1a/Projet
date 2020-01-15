@@ -1,29 +1,65 @@
-var animals = [   ["chien", "noir", "paris","femelle","images/chien1.jpg"],
-		  ["chat", "marron", "lille","male","images/chat1.jpg"],
-		  ["chien","beige","lyon","male","images/chat2.jpeg"],
-		  ["autre","blanc","paris","male","images/lapin.jpeg"]
-		];
-var i=0;
-var currentPage=null;
+/*
 
-function show(type){
-if (type == 'all'){
+function showAnimals(){
 	if(currentPage!="all"){
-		var code = "";
-		for(i=0;i<animals.length;i++){
-			 code=code+"<div class=block id="+ animals[i][0]+"><img src="+animals[i][4]+" height=280px width=300px></img><ul><li>Race : "+animals[i][0]
-												+"</li><li>Couleur : "+animals[i][1]
-												+"</li><li>Ville : "+animals[i][2]
-												+"</li><li>Sexe:"+animals[i][3]+"</ul></div>";
-		}
+		code="<div class=block id={{a.race}}><img src={{a.picture}} height=280px width=300px></img><ul><li>Race : {{a.race}}</li><li>Couleur : {{a.color}}</li><li>Ville : {{a.city}}</li><li>Sexe:{{a.sexe}}</ul></div>";
 		var elem = document.getElementById("animals");
-			elem.innerHTML = code;
+		elem.innerHTML = "{{% for a animals %}}"+code+"{{% endfor %}}";
 	}
 	currentPage="all";
 	
 }
 
-if(type=='Chien'){
+function showDogs(){
+		if(currentPage!="dogs"){
+			code="<div class=block id={{a.race}}><img src={{a.picture}} height=280px width=300px></img><ul><li>Race : {{a.race}}</li><li>Couleur : {{a.color}}</li><li>Ville : {{a.city}}</li><li>Sexe:{{a.sexe}}</ul></div>";
+			var elem = document.getElementById("animals");
+			elem.innerHTML = "{{% for a animals %}} {{% if a.race='chien'%}}"+code+"{{% enfif %}}{{% endfor %}}";
+		}
+		currentPage="dogs";
+}
+
+function showCats(){
+	if(currentPage!="cats"){
+		code="<div class=block id={{a.race}}><img src={{a.picture}} height=280px width=300px></img><ul><li>Race : {{a.race}}</li><li>Couleur : {{a.color}}</li><li>Ville : {{a.city}}</li><li>Sexe:{{a.sexe}}</ul></div>";
+		var elem = document.getElementById("animals");
+		elem.innerHTML = "{{% for a animals %}} {{% if a.race='chat'%}}"+code+"{{% enfif %}}{{% endfor %}}";
+	}
+	currentPage="cats";
+}
+
+function showOthers(){
+	if(currentPage!="other"){
+		code="<div class=block id={{a.race}}><img src={{a.picture}} height=280px width=300px></img><ul><li>Race : {{a.race}}</li><li>Couleur : {{a.color}}</li><li>Ville : {{a.city}}</li><li>Sexe:{{a.sexe}}</ul></div>";
+		var elem = document.getElementById("animals");
+		elem.innerHTML = "{{% for a animals %}} {{% if a.race='chien'%}}"+code+"{{% enfif %}}{{% endfor %}}";
+	}
+	currentPage="other";
+}
+*/
+
+var animals = [  ["chien", "noir", "paris","femelle","/images/chien1.jpg"],
+		  ["chat", "marron", "lille","male","/images/chat1.jpg"],
+		  ["chien","beige","lyon","male","/images/chat2.jpeg"],
+		  ["autre","blanc","paris","male","/images/lapin.jpeg"]
+		];
+var i=0;
+var currentPage=null;
+
+function showAnimals(a){
+	if(currentPage!="all"){
+		var code = "";
+		for(let i=0; i<a.length; i++){
+			 code=code+"";
+		}
+		var elem = document.getElementById("animals");
+		elem.innerHTML = code;
+	}
+	currentPage="all";
+	
+}
+
+function showDogs(){
 	if(currentPage!="dogs"){
 		var tab=[];
 		var j=0;
@@ -46,7 +82,7 @@ if(type=='Chien'){
 	currentPage="dogs";
 }
 
-if(type=='Autre'){
+function showCats(){
 	if(currentPage!="cats"){
 		var tab=[];
 		var j=0;
@@ -94,12 +130,3 @@ function showOthers(){
 	currentPage="others";
 }
 
-/*
-function show(String type){
-	if(type=="all"){
-		document.getElementsById("animals").innerHTML = "{% for a in animals %} <div class=block id='{{a.race}}'><img src='/uploads/{{a._id}}' height=280px width=300px></img><ul><li>Race : {{a.race}}</li><li>Couleur : {{a.color}}</li><li>Ville : {{a.city}}</li><li>Sexe:{{a.sexe}}</ul></div> {% endblock %}"
-	} else {
-		document.getElementsById("animals").innerHTML = "{% for a in animals %} {% if a.race==type %}  <div class=block id='{{a.race}}'><img src='/uploads/{{a._id}}' height=280px width=300px></img><ul><li>Race : {{a.race}}</li><li>Couleur : {{a.color}}</li><li>Ville : {{a.city}}</li><li>Sexe:{{a.sexe}}</ul></div> {% endfor %}{% endblock %}"
-	}
-}
-*/
