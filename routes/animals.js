@@ -110,6 +110,9 @@ router.get('/perdu/others', (req,res)=> {
 	res.render('./../views/others_found.html', {animals : others});
 });
 
+router.get('/contact',function (req,res){
+	res.render('./../views/contact.html');
+});
 
 
 router.get('/:id',function (req,res){
@@ -134,5 +137,55 @@ router.post('/new', (req, res)=> {
 	console.log("Ajout de "+animal+" a la liste")
 	res.redirect('/');
 });
+
+/*
+router.post('/contact',function(req, res, next) {
+	const output = `
+	  <p>You have a new contact request</p>
+	  <h3>Contact Details</h3>
+	  <ul>  
+		<li>Nom: ${req.body.name}</li>
+		<li>Email: ${req.body.email}</li>
+		<li>Objet de la requête: ${req.body.subject}</li>
+	  </ul>
+	  <h3>Message</h3>
+	  <p>${req.body.message}</p>
+	`;
+  
+	let transporter = nodemailer.createTransport({
+	  service: 'Gmail',
+	  auth: {
+		  user: 'syladant@gmail.com', // generated ethereal user
+		  pass: 'sylaDANT'  // generated ethereal password
+	  },
+	  tls:{
+		rejectUnauthorized:false
+	  }
+	});
+  
+  
+	var mailOptions = {
+	  from: '"Syla Contact" <syladant@gmail.com>', // sender address
+	  to: 'syladant@gmail.com', // list of receivers
+	  subject: 'Syle Contact', // Subject line
+	  text: 'Wrie something here', // plain text body
+	  html: output //html body
+	};
+	transporter.sendMail(mailOptions, function(error, info) {
+	  if (error) {
+		console.log(error);
+		res.redirect('/');
+	  }else{
+		console.log('Message sent: %s', info.response); 
+		res.render('contact', {msg:'Votre message a bien été envoyé !'});
+	  }
+	  console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+  
+	  
+	});
+	transporter.close();
+  });*/
+  
+  
 
 module.exports = router;

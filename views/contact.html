@@ -1,30 +1,23 @@
+{% extends "show.html" %}
+
+{% block content %}
+
 <form action="/contact" id="contact-form" method="post" role="form">
   <fieldset>
     <label for="name">Name</label>
-    <input 
-      id="name" 
-      name="name" 
-      type="text" 
-      placeholder="Your name" 
+    <input id="name"  name="name" type="text" placeholder="Your name" >
       required
 
     <label for="email">Email</label>
-    <input 
-      id="email" 
-      name="email" 
-      type="text" 
-      placeholder="Your email" 
-      required
-
+    <input id="email" name="email"  type="text" placeholder="Your email" >required
+    
     <label for="message">Message</label>
-    <textarea 
-      id="message" 
-      name="message" 
-      placeholder="Enter your message here" 
-      rows="3" 
+    <textarea id="message"  name="message" placeholder="Enter your message here" rows="3" >
       required
     </textarea>
 
     <button type="submit">Submit</button>
   </fieldset>
 </form>
+
+{% endblock %}
