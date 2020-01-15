@@ -3,28 +3,13 @@ const mongoose = require('mongoose');
 const nunjucks = require('nunjucks');
 const multer = require('multer');
 const bodyParser = require('body-parser');
-//const nodemailer = require('nodemailer');
+
 
 const upload = multer({
 	dest: __dirname/"upload"
 });
 
-/*
-let project_name = "syla";
-let user_name = "user_project_2";
 
-let pwd = "bruno_brownie";
-
-const uri = "mongodb+srv://" + user_name + ":" + pwd + "@dant-kkn0r.mongodb.net/"+ project_name + "?retryWrites=true&w=majority";
-
-mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
-		
-var db = mongoose.connection;
-
-db.on('error', console.log.bind(console, "Erreur connexion")); 
-db.once('open', function(callback){ 
-    console.log("Connecté"); 
-}) */
 
 require('./models/Animal');
 
