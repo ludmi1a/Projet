@@ -14,10 +14,7 @@ label {
  margin-top:10px;
  display:block;
  }
-label.inline {
- display:inline;
- margin-right:50px;
- }
+
 input, textarea{
  margin-left:3px;
  margin-right: 3px;
@@ -28,6 +25,7 @@ input, textarea{
  }
 
  textarea{
+	padding: 5px;
 	height: 100px;
 	box-shadow: 0 0 5px #B0CFE0;
 	margin-top : 10px;

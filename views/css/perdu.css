@@ -1,28 +1,16 @@
 
-.site-wrapper-inner {
+
+.container {
 	display: table-cell;
-	vertical-align: top;
-}
-.cover-container {
 	margin-right: auto;
 	margin-left: auto;
-}
-
-.text {
-	text-align : center;
-	font-family:  Courier;
 }
 
 .page .inner{
 	background-color: coral;
 }
 
-.toutes{
-	margin-left: 10%;
-	width: 80%;
-	text-align: center;
-	
-}
+
 .image{
 	background-color: Teal;
 	border-radius :25%;
@@ -53,13 +41,6 @@ img{
 	border-radius:20%;
 }
 
-
-.barre{
-	margin-left:100px;
-	height : 100px;
-	width : 100%;
-	
-}
 
 .titre{
 	float: left;

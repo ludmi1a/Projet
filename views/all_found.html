@@ -4,7 +4,7 @@
 
 {% for a in animals %}
 <a href='/{{a._id}}' class=block id={{a.race}}>
-    <img src="/upload/{{a.picture}}" alt="{{a.race}}" height=280px width=300px></img>
+    <img src={{a.picture}} alt="{{a.race}}" height=280px width=300px></img>
     <ul>
         <li>Race : {{a.race}}</li>
         <li>Couleur : {{a.color}}</li>
@@ -14,5 +14,9 @@
 </a>
 
 {% endfor %}
+
+<div class= 'inner'><h1>Vous ne trouvez pas votre animal ?</h1>
+    <a href='/new'><button class='button'><h2>Déposez une annonce</h2></button>
+</div>
 
 {% endblock %}

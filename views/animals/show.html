@@ -3,11 +3,17 @@
 {% block content %}
 	<div class="infos">
 			<h1 style='color: white;' class='inner'>{% if animal.race == "Autre" %} Animal {% else %} {{animal.race}} {% endif %} {{animal.type}}</h1>
+			<img src={{animal.picture}} height='200px' style='text-align: center; '>
 			<ul style='color:black;'>
 				<li>Couleur : {{animal.color}}</li>
 				<li>Sexe : {{animal.sexe}}</li>
 				<li>Ville : {{animal.city}}</li>
 			</ul>
+	</div>
+
+	<div class='depot'>
+		<h1>Vous reconnaissez cet animal ?</h1>
+		<h1 class='button'><a href='/contact'>Contactez-nous !</a></h1>
 	</div>
 
 {% endblock %}

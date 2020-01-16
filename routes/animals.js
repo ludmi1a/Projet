@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+const nodemailer =require('nodemailer');
+
 const Animal = require('./../models/Animal');
 const Type = require('./../models/Type');
-const nodemailer =require('nodemailer');
+
 var animals = [];
 
 
@@ -131,34 +133,46 @@ router.post('/new', (req, res)=> {
 	animal.sexe = req.body.sexe;
 	animal.city = req.body.city;
 	animal.type = req.body.type;
-	if(req.file) animal.picture = req.file.filename ;
+	animal.picture = "/images/no-image.jpg" ;
 	
 	animals.push(animal);
 	console.log("Ajout de "+animal+" a la liste")
 	res.redirect('/');
 });
+
 router.post('/contact' ,function(req,res){
+	  const output = `
+    <p>You have a new contact request</p>
+    <h3>Contact Details</h3>
+    <ul>  
+      <li>Nom: ${req.body.name}</li>
+      <li>Email: ${req.body.email}</li>
+      <li>Objet de la requête: ${req.body.subject}</li>
+    </ul>
+    <h3>Message</h3>
+    <p>${req.body.message}</p>
+  `;
 	var transporter = nodemailer.createTransport({
-		service: "Gmail",
+		service: 'Gmail',
 		auth : { 
 			user : 'syladant@gmail.com',
-			pass : 'syladant',
+			pass : 'sylaDANT'
 		}
 	});
+
 	var mailOptions = {
 		from : "syladant@gmail.com",
 		to : "syladant@gmail.com",
-		subject :" animal retrouvé ",
-		text : "helloword ",
-		html : 'output',
+		subject :"New message",
+		text : 'whatsup'
 	}
 	transporter.sendMail(mailOptions, function(error , info){
 		if (error){
 			console.log(error);
 			res.redirect('/');
 		}else {
-			console.log('message sent : %s',info.response);
-			res.render('contact',{msg:'votre message a été envoyé !'})
+			console.log('message envoyé');
+			res.render('/',{msg: 'votre message a été envoyé !'})
 		}
 		transporter.close();
 	});
