@@ -8,13 +8,13 @@ const Type = require('./../models/Type');
 
 var animals = [];
 
-var animals = [ new Animal({race : "Chien", color : "Noir", sexe : "Male" , city : "Paris" , type : "Perdu", picture : "/images/chien1.jpg"}),
+/*var animals = [ new Animal({race : "Chien", color : "Noir", sexe : "Male" , city : "Paris" , type : "Perdu", picture : "/images/chien1.jpg"}),
 		new Animal({race : "Chat", color : "Roux", sexe : "Male" , city : "Marseille" , type : "Perdu", picture : "/images/chat2.jpeg"}),
 		new Animal({race : "Chat", color : "Beige", sexe : "Femelle" , city : "Lyon" , type : "Trouvé", picture : "/images/chat1.jpeg"}),
 		new Animal({race : "Chat", color : "Gris", sexe : "Femelle" , city : "Lyon" , type : "Trouvé", picture : "/images/chat3.jpeg"}),
 		new Animal({race : "Lapin", color : "Beige", sexe : "Femelle" , city : "Lille" , type : "Perdu", picture : "/images/lapin.jpeg"}),
 		new Animal({race : "Oiseau", color : "Vert", sexe : "Male" , city : "Paris" , type : "Trouvé", picture : "/images/oiseau1.jpeg"})
-	]
+	]*/
 
 
 router.get('/', (req,res)=>{
