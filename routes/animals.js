@@ -15,22 +15,6 @@ var animals = [ new Animal({race : "Chien", color : "Noir", sexe : "Male" , city
 		new Animal({race : "Lapin", color : "Beige", sexe : "Femelle" , city : "Lille" , type : "Perdu", picture : "/images/lapin.jpeg"}),
 		new Animal({race : "Oiseau", color : "Vert", sexe : "Male" , city : "Paris" , type : "Trouvé", picture : "/images/oiseau1.jpeg"})
 	]
- 
-
-
-router.get('/index',function (req,res){
-
-	let promise = new Promise(function(resolve, reject) {
-		var animals = Animal.find({});
-		setTimeout(() => resolve("done"), 1000);
-	});
-	promise.then(
-	  function(result) { console.log(animals);
-		res.render('./../views/animals/index.html', {animals : animals}); },
-	  function(error) { console.log(errrrreur); }
-	);
-});
-
 
 
 router.get('/', (req,res)=>{
